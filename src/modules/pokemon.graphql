@@ -1,9 +1,0 @@
-type Pokemon{
-    name: String
-    id: ID!
-    height: Int
-}
-
-type Query{
-    pokemon(id: ID!): Pokemon
-}

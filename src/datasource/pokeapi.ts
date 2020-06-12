@@ -1,5 +1,9 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
+import { Injectable, ProviderScope } from '@graphql-modules/di';
 
+@Injectable({
+    scope: ProviderScope.Session
+})
 class PokeAPI extends RESTDataSource{
     constructor(){
         super();

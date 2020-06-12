@@ -1,17 +1,12 @@
 import { ApolloServer } from 'apollo-server';
+import 'reflect-metadata';
 
 //load the environment config
 import { environment } from './config/environment';
-import * as typeDefs from './modules/pokemon.graphql';
-import resolvers from './modules/pokemon.resolver';
-import PokeAPI from './datasource/pokeapi';
+import { PokemonModule } from './modules/pokemon';
 
 const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    dataSources: () => ({
-        pokeAPI: new PokeAPI(),
-    }),
+    schema: PokemonModule.schema,
     introspection: environment.apollo.introspection,
     playground: environment.apollo.introspection
 });

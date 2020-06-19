@@ -1,0 +1,38 @@
+type GenericObject{
+    name: String
+    url: String
+}
+
+type Type{
+    name:String
+    id: ID!
+    damage_relations: DamageRelations 
+    generation: GenericObject
+    move_damage_class: GenericObject
+    game_indices: [GameIndices]
+    moves: [GenericObject]
+    names: [Name]
+}
+
+type DamageRelations{
+    double_damage_from: [GenericObject]
+    double_damage_to: [GenericObject]
+    half_damage_from: [GenericObject]
+    half_damage_to: [GenericObject]
+    no_damage_from: [GenericObject]
+    no_damage_to: [GenericObject]
+}
+
+type GameIndices{
+    game_index: Int
+    generation: GenericObject
+}
+
+type Name{
+    name: String
+    language: GenericObject
+}
+
+type Query{
+    type(id: ID!): Type
+}

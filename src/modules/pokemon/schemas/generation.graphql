@@ -1,0 +1,25 @@
+type GenericObject{
+    name: String
+    url: String
+}
+
+type Generation{
+    abilities: [GenericObject]
+    id: ID
+    main_region: GenericObject
+    name: String
+    names: [Names]
+    moves: [GenericObject]
+    pokemon_species: [GenericObject]
+    types: [GenericObject]
+    version_groups: [GenericObject]
+}
+
+type Names{
+    name: String
+    language: GenericObject
+}
+
+type Query{
+    generation(id:ID!): Generation
+}

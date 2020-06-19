@@ -1,5 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { Injectable, ProviderScope } from '@graphql-modules/di';
+import { apiUtils } from '../config/apiUtils';
 
 @Injectable({
     scope: ProviderScope.Session
@@ -7,12 +8,19 @@ import { Injectable, ProviderScope } from '@graphql-modules/di';
 class PokeAPI extends RESTDataSource{
     constructor(){
         super();
-        this.baseURL = 'https://pokeapi.co/api/v2/';
+        this.baseURL = apiUtils.baseUri;
     }
 
     async getPokemon(id:number){
-        const response = await this.get(`pokemon/${id}`);
-        return response;
+        return await this.get(`${apiUtils.endpoints.pokemon}${id}`);
+    }
+
+    async getType(id:number){
+        return await this.get(`${apiUtils.endpoints.type}${id}`);
+    }
+
+    async getGeneration(id:number){
+        return await this.get(`${apiUtils.endpoints.generation}${id}`);
     }
 }
 

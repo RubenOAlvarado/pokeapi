@@ -6,7 +6,6 @@ type Pokemon{
     is_default: Boolean
     location_area_encounters: String
     base_experience: Int
-    abilities: [Abilities]
     forms: [GenericObject]
     game_indices: [GameIndices]
     held_items: [HeldItems]
@@ -14,18 +13,11 @@ type Pokemon{
     species: GenericObject
     sprites: Sprites
     stats: [Stats]
-    types: [Types]
 }
 
 type GenericObject{
     name: String
     url: String
-}
-
-type Abilities{
-    is_hidden: Boolean
-    slot: Int
-    ability: GenericObject
 }
 
 type GameIndices{
@@ -69,11 +61,6 @@ type Stats{
     base_stat: Int
     effort: Int
     stat: GenericObject
-}
-
-type Types{
-    slot: Int
-    type: GenericObject
 }
 
 type Query{

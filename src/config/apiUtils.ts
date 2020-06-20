@@ -6,6 +6,7 @@ interface ApiUtils{
         type: string,
         pokemon: string,
         generation: string
+        ability: string
     }
 }
 
@@ -14,6 +15,7 @@ export const apiUtils: ApiUtils = {
     endpoints:{
         type: 'type/',
         pokemon: 'pokemon/',
-        generation: 'generation/'
+        generation: 'generation/',
+        ability: 'ability/',
     }
 }

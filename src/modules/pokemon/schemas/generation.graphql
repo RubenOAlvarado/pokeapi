@@ -15,9 +15,8 @@ type Generation{
     version_groups: [GenericObject]
 }
 
-type Names{
-    name: String
-    language: GenericObject
+extend type Names{
+    generation: Generation
 }
 
 type Query{

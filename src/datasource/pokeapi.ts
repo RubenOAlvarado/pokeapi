@@ -22,6 +22,10 @@ class PokeAPI extends RESTDataSource{
     async getGeneration(id:number){
         return await this.get(`${apiUtils.endpoints.generation}${id}`);
     }
+
+    async getAbility(id:number){
+        return await this.get(`${apiUtils.endpoints.ability}${id}`)
+    }
 }
 
 export default PokeAPI;

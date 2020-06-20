@@ -1,0 +1,43 @@
+type GenericObject{
+    name: String
+    url: String
+}
+
+type Ability{
+    id: ID!
+    name: String
+    is_main_series: Boolean
+    effect_changes: [EffectChanges]
+    effect_entries:[EffectEntries]
+    flavour_text_entries: [FlavorTextEntries]
+    names: [Names]
+    pokemon: [Pokemon]
+}
+
+type EffectChanges{
+    effect_entries: [EffectEntries]
+    version_group: GenericObject
+}
+
+type EffectEntries{
+    effect: String
+    language: GenericObject
+}
+
+type FlavorTextEntries{
+    flavor_text: String
+    language: GenericObject
+    version_group: GenericObject
+}
+
+extend type Names{
+    ability: Ability
+}
+
+extend type Pokemon{
+    ability: [Ability]
+}
+
+type Query{
+    ability(id:ID!): Ability
+}

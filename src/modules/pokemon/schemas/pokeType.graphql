@@ -11,7 +11,8 @@ type Type{
     move_damage_class: GenericObject
     game_indices: [GameIndices]
     moves: [GenericObject]
-    names: [Name]
+    names: [Names]
+    pokemon: [Pokemon]
 }
 
 type DamageRelations{
@@ -28,9 +29,12 @@ type GameIndices{
     generation: GenericObject
 }
 
-type Name{
-    name: String
-    language: GenericObject
+extend type Names{
+    type: Type
+}
+
+extend type Pokemon{
+    types: [Type]
 }
 
 type Query{

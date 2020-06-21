@@ -13,6 +13,7 @@ type Pokemon{
     species: GenericObject
     sprites: Sprites
     stats: [Stats]
+    order: Int
 }
 
 type GenericObject{

@@ -11,19 +11,19 @@ class PokeAPI extends RESTDataSource{
         this.baseURL = apiUtils.baseUri;
     }
 
-    async getPokemon(id:number){
+    async getPokemon(id:number|string){
         return await this.get(`${apiUtils.endpoints.pokemon}${id}`);
     }
 
-    async getType(id:number){
+    async getType(id:number|string){
         return await this.get(`${apiUtils.endpoints.type}${id}`);
     }
 
-    async getGeneration(id:number){
+    async getGeneration(id:number|string){
         return await this.get(`${apiUtils.endpoints.generation}${id}`);
     }
 
-    async getAbility(id:number){
+    async getAbility(id:number|string){
         return await this.get(`${apiUtils.endpoints.ability}${id}`)
     }
 }

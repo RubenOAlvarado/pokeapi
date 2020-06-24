@@ -1,0 +1,28 @@
+type PokemonForm{
+    id: ID!
+    name: String
+    order: Int
+    form_order: Int
+    is_default: Boolean
+    is_battle_only: Boolean
+    is_mega: Boolean
+    pokemon: Pokemon
+    sprites: Sprites
+    version_group: GenericObject
+}
+
+extend type Pokemon{
+    forms: [PokemonForm]
+}
+
+extend type Sprites{
+    form:PokemonForm
+}
+
+extend type GenericObject{
+    form: PokemonForm
+}
+
+type Query{
+    forms(id:ID!):PokemonForm 
+}

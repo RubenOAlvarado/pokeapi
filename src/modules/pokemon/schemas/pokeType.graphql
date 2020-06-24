@@ -1,8 +1,3 @@
-type GenericObject{
-    name: String
-    url: String
-}
-
 type Type{
     name:String
     id: ID!
@@ -36,6 +31,10 @@ extend type Names{
 extend type Pokemon{
     slot: Int
     types: [Type]
+}
+
+extend type GenericObject{
+    type: Type
 }
 
 type Query{

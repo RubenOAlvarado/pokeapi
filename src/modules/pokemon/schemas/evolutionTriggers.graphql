@@ -1,0 +1,18 @@
+type EvolutionTriggers{
+    id: ID!
+    name: String
+    names: [Names]
+    pokemon_species: [GenericObject]
+}
+
+extend type Names{
+    evolutionTriggers: EvolutionTriggers
+}
+
+extend type GenericObject{
+    evolutionTriggers: EvolutionTriggers
+}
+
+type Query{
+    evolutionTrigger(id:ID!):EvolutionTriggers
+}

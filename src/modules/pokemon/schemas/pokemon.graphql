@@ -6,7 +6,6 @@ type Pokemon{
     is_default: Boolean
     location_area_encounters: String
     base_experience: Int
-    forms: [GenericObject]
     game_indices: [GameIndices]
     held_items: [HeldItems]
     moves: [Moves]
@@ -14,11 +13,6 @@ type Pokemon{
     sprites: Sprites
     stats: [Stats]
     order: Int
-}
-
-type GenericObject{
-    name: String
-    url: String
 }
 
 type GameIndices{
@@ -36,32 +30,22 @@ type VersionDetails{
     version: GenericObject
 }
 
-type Moves{
-    move: GenericObject
-    version_group_details: [VersionGroupDetails]
-}
-
-type VersionGroupDetails{
-    level_learned_at: Int
-    move_learned_method: GenericObject
-    version_group: GenericObject
-}
-
-type Sprites{
-    back_default: String
-    back_female: String
-    back_shiny: String
-    back_shiny_female: String
-    front_default: String
-    front_female: String
-    front_shiny: String
-    front_shiny_female: String
-}
-
 type Stats{
     base_stat: Int
     effort: Int
     stat: GenericObject
+}
+
+extend type Sprites{
+    pokemon: Pokemon
+}
+
+extend type GenericObject{
+    pokemon: Pokemon
+}
+
+extend type Moves{
+    pokemon: Pokemon
 }
 
 type Query{

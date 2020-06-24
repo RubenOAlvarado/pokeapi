@@ -1,0 +1,48 @@
+type EvolutionChain{
+    id: ID!
+    baby_trigger_item: GenericObject
+    chain: Chain
+}
+
+type Chain{
+    is_baby: Boolean
+    species: GenericObject
+    evolution_details: EvolutionDetails
+    evolves_to: [Chain]
+}
+
+type EvolutionDetails{
+    item: GenericObject
+    trigger: GenericObject
+    gender: Int
+    held_item: GenericObject
+    know_move: Moves
+    know_move_type: Type
+    min_level: Int
+    min_happiness: Int
+    min_beauty: Int
+    min_affection: Int
+    needs_overworld_rain: Boolean
+    party_species: GenericObject
+    party_type: Type
+    relative_physical_stats: Int
+    time_of_day: String
+    trade_species: GenericObject
+    turn_upside_down: Boolean
+}
+
+extend type GenericObject{
+    evolution_chain: EvolutionChain
+}
+
+extend type Moves{
+    evolution_chain: EvolutionChain
+}
+
+extend type Type{
+    evolution_chain: EvolutionChain
+}
+
+type Query{
+    evolutionChain(id:ID!): EvolutionChain
+}

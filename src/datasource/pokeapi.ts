@@ -26,6 +26,18 @@ class PokeAPI extends RESTDataSource{
     async getAbility(id:number|string){
         return await this.get(`${apiUtils.endpoints.ability}${id}`)
     }
+
+    async getEvolutionChain(id:number){
+        return await this.get(`${apiUtils.endpoints.evolution_chain}${id}`);
+    }
+
+    async getEvolutionTrigger(id:number){
+        return await this.get(`${apiUtils.endpoints.evolution_trigger}${id}`);
+    }
+
+    async getForms(id:number|string){
+        return await this.get(`${apiUtils.endpoints.evolution_trigger}${id}`);
+    }
 }
 
 export default PokeAPI;

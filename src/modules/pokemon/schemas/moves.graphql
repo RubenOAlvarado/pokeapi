@@ -1,0 +1,14 @@
+type Moves{
+    move: GenericObject
+    version_group_details: [VersionGroupDetails]
+}
+
+type VersionGroupDetails{
+    level_learned_at: Int
+    move_learned_method: GenericObject
+    version_group: GenericObject
+}
+
+extend type GenericObject{
+    move: Moves
+}

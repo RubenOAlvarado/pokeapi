@@ -1,13 +1,8 @@
-type GenericObject{
-    name: String
-    url: String
-}
-
 type Names{
     name: String
     language: GenericObject
 }
 
-type Query{
-    dummy: String
+extend type GenericObject{
+    names: Names
 }

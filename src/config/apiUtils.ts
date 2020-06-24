@@ -6,7 +6,10 @@ interface ApiUtils{
         type: string,
         pokemon: string,
         generation: string
-        ability: string
+        ability: string,
+        evolution_chain: string,
+        evolution_trigger: string,
+        form: string
     }
 }
 
@@ -17,5 +20,8 @@ export const apiUtils: ApiUtils = {
         pokemon: 'pokemon/',
         generation: 'generation/',
         ability: 'ability/',
+        evolution_chain: 'evolution-chain/',
+        evolution_trigger: 'evolution-trigger/',
+        form: 'pokemon-form/'
     }
 }

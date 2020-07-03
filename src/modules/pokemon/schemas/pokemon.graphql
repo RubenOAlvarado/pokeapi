@@ -49,5 +49,6 @@ extend type Moves{
 }
 
 type Query{
+    """query that presents the pokemon"""
     pokemon(id: ID!): Pokemon
 }
